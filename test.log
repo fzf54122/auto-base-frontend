@@ -1,0 +1,342 @@
+.
+├── auto-imports.d.ts
+├── components.d.ts
+├── index.html
+├── LICENSE
+├── mock
+│   ├── backmenu.ts
+│   ├── card.ts
+│   ├── menu.ts
+│   ├── systemUser.ts
+│   ├── table.ts
+│   ├── user.ts
+│   └── work.ts
+├── mockProdServer.ts
+├── package.json
+├── package-lock.json
+├── public
+│   └── favicon.ico
+├── README.md
+├── README.zh-CN.md
+├── src
+│   ├── api
+│   │   ├── card.ts
+│   │   ├── system
+│   │   │   ├── login.ts
+│   │   │   └── user.ts
+│   │   ├── table.ts
+│   │   ├── user.ts
+│   │   └── work.ts
+│   ├── App.vue
+│   ├── assets
+│   │   ├── images
+│   │   │   ├── 401.gif
+│   │   │   ├── 404_cloud.png
+│   │   │   └── 404.png
+│   │   ├── login
+│   │   │   ├── bg.png
+│   │   │   └── left.jpg
+│   │   ├── logo.png
+│   │   ├── style
+│   │   │   ├── common.scss
+│   │   │   └── transition.scss
+│   │   └── svg
+│   │       └── read.md
+│   ├── components
+│   │   ├── charts
+│   │   │   └── index.vue
+│   │   ├── cropper
+│   │   │   ├── index.vue
+│   │   │   └── tip.vue
+│   │   ├── layer
+│   │   │   └── index.vue
+│   │   ├── menu
+│   │   │   └── index.vue
+│   │   ├── SvgIcon
+│   │   │   └── index.vue
+│   │   ├── table
+│   │   │   ├── index.vue
+│   │   │   └── type.ts
+│   │   └── tinymce
+│   │       ├── dynamicLoadScript.ts
+│   │       ├── index.vue
+│   │       ├── plugins.ts
+│   │       └── toolbar.ts
+│   ├── config
+│   │   └── index.ts
+│   ├── demo
+│   │   ├── vue-dom.vue
+│   │   ├── vue-setup.vue
+│   │   └── vue.vue
+│   ├── directive
+│   │   ├── clickOutside
+│   │   │   └── index.ts
+│   │   ├── copy
+│   │   │   └── index.ts
+│   │   ├── debounce
+│   │   │   └── index.ts
+│   │   ├── drag
+│   │   │   └── index.ts
+│   │   ├── dragable
+│   │   │   └── index.ts
+│   │   ├── longpress
+│   │   │   └── index.ts
+│   │   └── waterMarker
+│   │       └── index.ts
+│   ├── layout
+│   │   ├── components
+│   │   │   ├── functionList
+│   │   │   │   ├── fullscreen.vue
+│   │   │   │   ├── github.vue
+│   │   │   │   ├── sizeChange.vue
+│   │   │   │   ├── theme
+│   │   │   │   │   ├── theme-color.vue
+│   │   │   │   │   └── theme-icon.vue
+│   │   │   │   ├── theme.vue
+│   │   │   │   └── word.vue
+│   │   │   ├── Logo
+│   │   │   │   └── index.vue
+│   │   │   ├── Menu
+│   │   │   │   ├── index.vue
+│   │   │   │   ├── Link.vue
+│   │   │   │   └── MenuItem.vue
+│   │   │   └── passwordLayer.vue
+│   │   ├── index.vue
+│   │   ├── theme1
+│   │   │   ├── Header
+│   │   │   │   ├── Breadcrumb.vue
+│   │   │   │   └── index.vue
+│   │   │   ├── index.vue
+│   │   │   └── Tabs
+│   │   │       ├── index.vue
+│   │   │       ├── item.vue
+│   │   │       └── tabsHook.ts
+│   │   └── theme2
+│   │       ├── Header
+│   │       │   └── index.vue
+│   │       └── index.vue
+│   ├── locale
+│   │   ├── index.ts
+│   │   ├── json
+│   │   │   ├── en.json
+│   │   │   ├── es.json
+│   │   │   ├── ja.json
+│   │   │   ├── pt.json
+│   │   │   ├── ru.json
+│   │   │   └── zh-cn.json
+│   │   └── modules
+│   │       ├── en.ts
+│   │       ├── es.ts
+│   │       ├── ja.ts
+│   │       ├── pt.ts
+│   │       ├── ru.ts
+│   │       └── zh-cn.ts
+│   ├── main.ts
+│   ├── router
+│   │   ├── createNode.ts
+│   │   ├── index.ts
+│   │   ├── index.type.ts
+│   │   ├── modules
+│   │   │   ├── chart.ts
+│   │   │   ├── community.ts
+│   │   │   ├── component.ts
+│   │   │   ├── dashboard.ts
+│   │   │   ├── directive.ts
+│   │   │   ├── document.ts
+│   │   │   ├── menu.ts
+│   │   │   ├── pages.ts
+│   │   │   ├── print.ts
+│   │   │   ├── systemManage.ts
+│   │   │   ├── system.ts
+│   │   │   └── tab.ts
+│   │   ├── permission
+│   │   │   ├── backConfig.ts
+│   │   │   ├── back.ts
+│   │   │   └── front.ts
+│   │   ├── permission.ts
+│   │   └── reload.vue
+│   ├── shims-vue.d.ts
+│   ├── store
+│   │   ├── index.ts
+│   │   ├── modules
+│   │   │   ├── app.ts
+│   │   │   ├── keepAlive.ts
+│   │   │   └── user.ts
+│   │   └── plugins
+│   │       └── persistent.ts
+│   ├── theme
+│   │   ├── index.scss
+│   │   ├── index.ts
+│   │   └── modules
+│   │       ├── chinese
+│   │       │   ├── index.scss
+│   │       │   └── screen.png
+│   │       └── dark.scss
+│   ├── utils
+│   │   ├── system
+│   │   │   ├── nprogress.ts
+│   │   │   ├── request.ts
+│   │   │   ├── statistics.ts
+│   │   │   └── title.ts
+│   │   └── tab
+│   │       └── index.ts
+│   ├── views
+│   │   ├── main
+│   │   │   ├── community
+│   │   │   │   ├── components
+│   │   │   │   │   └── card.vue
+│   │   │   │   ├── qq.vue
+│   │   │   │   └── site.vue
+│   │   │   ├── components
+│   │   │   │   ├── button
+│   │   │   │   │   ├── elementButton.vue
+│   │   │   │   │   ├── index.vue
+│   │   │   │   │   └── normalButton.vue
+│   │   │   │   ├── codeEditor
+│   │   │   │   │   └── index.vue
+│   │   │   │   ├── cutPhoto
+│   │   │   │   │   └── index.vue
+│   │   │   │   ├── dragPane
+│   │   │   │   │   └── index.vue
+│   │   │   │   ├── exportExcel
+│   │   │   │   │   ├── ExportExcel.ts
+│   │   │   │   │   ├── index.vue
+│   │   │   │   │   └── types.ts
+│   │   │   │   ├── jsonEditor
+│   │   │   │   │   └── index.vue
+│   │   │   │   ├── map
+│   │   │   │   │   └── index.vue
+│   │   │   │   ├── mdEditor
+│   │   │   │   │   └── index.vue
+│   │   │   │   ├── rightMenu
+│   │   │   │   │   ├── basic.vue
+│   │   │   │   │   ├── index.vue
+│   │   │   │   │   ├── menuDynamic.vue
+│   │   │   │   │   └── menuGroup.vue
+│   │   │   │   └── wordEditor
+│   │   │   │       └── index.vue
+│   │   │   ├── dashboard
+│   │   │   │   ├── components
+│   │   │   │   │   ├── basic-template.vue
+│   │   │   │   │   ├── card
+│   │   │   │   │   │   ├── index.vue
+│   │   │   │   │   │   └── row.vue
+│   │   │   │   │   ├── charts
+│   │   │   │   │   │   ├── barChart.vue
+│   │   │   │   │   │   ├── circleChart.vue
+│   │   │   │   │   │   ├── index.vue
+│   │   │   │   │   │   ├── modules
+│   │   │   │   │   │   │   ├── bar.ts
+│   │   │   │   │   │   │   ├── circle.ts
+│   │   │   │   │   │   │   └── pie.ts
+│   │   │   │   │   │   └── pieChart.vue
+│   │   │   │   │   └── communication.vue
+│   │   │   │   └── index.vue
+│   │   │   ├── directive
+│   │   │   │   ├── clickOutside.vue
+│   │   │   │   ├── copy.vue
+│   │   │   │   ├── debounce.vue
+│   │   │   │   ├── dragable.vue
+│   │   │   │   ├── infiniteScroll.vue
+│   │   │   │   ├── longpress.vue
+│   │   │   │   └── waterMarker.vue
+│   │   │   ├── document
+│   │   │   │   ├── api.vue
+│   │   │   │   ├── crud.vue
+│   │   │   │   ├── dir.ts
+│   │   │   │   ├── function.vue
+│   │   │   │   ├── intro.vue
+│   │   │   │   ├── keepAlive.vue
+│   │   │   │   ├── menu.vue
+│   │   │   │   ├── systemfont.vue
+│   │   │   │   └── theme.vue
+│   │   │   ├── echarts
+│   │   │   │   ├── bar.vue
+│   │   │   │   ├── line.vue
+│   │   │   │   ├── map.vue
+│   │   │   │   ├── options
+│   │   │   │   │   ├── bar.ts
+│   │   │   │   │   ├── line.ts
+│   │   │   │   │   ├── mapData.json
+│   │   │   │   │   ├── map.ts
+│   │   │   │   │   ├── pie.ts
+│   │   │   │   │   └── radar.ts
+│   │   │   │   ├── pie.vue
+│   │   │   │   └── radar.vue
+│   │   │   ├── menu
+│   │   │   │   ├── menu-1
+│   │   │   │   │   ├── menu-1-1
+│   │   │   │   │   │   ├── menu-1-1-1.vue
+│   │   │   │   │   │   └── menu-1-1-2.vue
+│   │   │   │   │   └── menu-1-2.vue
+│   │   │   │   ├── menu-2.vue
+│   │   │   │   └── menu-3.vue
+│   │   │   ├── pages
+│   │   │   │   ├── baidu
+│   │   │   │   │   └── index.vue
+│   │   │   │   ├── card
+│   │   │   │   │   ├── detail
+│   │   │   │   │   │   └── index.vue
+│   │   │   │   │   └── index.vue
+│   │   │   │   ├── categoryTable
+│   │   │   │   │   ├── category.vue
+│   │   │   │   │   ├── enum.ts
+│   │   │   │   │   ├── index.vue
+│   │   │   │   │   ├── layer.vue
+│   │   │   │   │   └── my-table.vue
+│   │   │   │   ├── crudTable
+│   │   │   │   │   ├── enum.ts
+│   │   │   │   │   ├── index.vue
+│   │   │   │   │   └── layer.vue
+│   │   │   │   ├── layerTable
+│   │   │   │   │   ├── index.vue
+│   │   │   │   │   └── layer.vue
+│   │   │   │   ├── treeTable
+│   │   │   │   │   ├── enum.ts
+│   │   │   │   │   ├── index.vue
+│   │   │   │   │   ├── layer.vue
+│   │   │   │   │   ├── my-table.vue
+│   │   │   │   │   └── tree.vue
+│   │   │   │   └── work
+│   │   │   │       ├── block.vue
+│   │   │   │       ├── index.vue
+│   │   │   │       └── item.vue
+│   │   │   ├── permission
+│   │   │   │   ├── page.vue
+│   │   │   │   └── role.vue
+│   │   │   ├── print
+│   │   │   │   └── index.vue
+│   │   │   ├── systemManage
+│   │   │   │   ├── dictionary
+│   │   │   │   │   ├── data
+│   │   │   │   │   │   ├── index.vue
+│   │   │   │   │   │   └── layer.vue
+│   │   │   │   │   ├── index.vue
+│   │   │   │   │   ├── project
+│   │   │   │   │   │   ├── index.vue
+│   │   │   │   │   │   └── layer.vue
+│   │   │   │   │   └── type
+│   │   │   │   │       ├── index.vue
+│   │   │   │   │       └── layer.vue
+│   │   │   │   ├── menu
+│   │   │   │   │   └── index.vue
+│   │   │   │   ├── role
+│   │   │   │   │   └── index.vue
+│   │   │   │   └── users
+│   │   │   │       ├── index.vue
+│   │   │   │       └── layer.vue
+│   │   │   └── tab
+│   │   │       └── index.vue
+│   │   └── system
+│   │       ├── 401.vue
+│   │       ├── 404.vue
+│   │       ├── login.vue
+│   │       ├── redirect.vue
+│   │       └── register.vue
+│   └── vuex.d.ts
+├── test.log
+├── tsconfig.json
+├── VERSION.md
+└── vite.config.ts
+
+102 directories, 237 files

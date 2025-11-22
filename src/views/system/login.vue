@@ -5,7 +5,7 @@
         <img :src="loginLeftPng"/>
         <div class="login-content-left-mask">
           <div>{{ $t(systemTitle) }}</div>
-          <div>{{ $t(systemSubTitle) }}</div>
+          <div class="subtitle">{{ $t(systemSubTitle) }}</div>
         </div>
       </div>
 
@@ -62,6 +62,7 @@ import type { RouteLocationRaw  } from 'vue-router'
 import { getAuthRoutes } from '@/router/permission'
 import { ElMessage } from 'element-plus'
 import selectLang from '@/layout/components/functionList/word.vue'
+import { login } from '@/api/system/login'
 import loginLeftPng from '@/assets/login/left.jpg';
 
 export default defineComponent({
@@ -74,7 +75,7 @@ export default defineComponent({
     const route = useRoute()
     const form = reactive({
       name: 'admin',
-      password: '123456',
+      password: 'fzf991013',
       loading: false
     })
     const passwordType = ref('password')
@@ -100,29 +101,19 @@ export default defineComponent({
         resolve(true)
       })
     }
-    const submit = () => {
-      checkForm()
-      .then(() => {
+    const submit = async () => {
+      try {
+        await checkForm()
         form.loading = true
-        let params = {
-          name: form.name,
-          password: form.password
-        }
-        store.dispatch('user/login', params)
-        .then(async () => {
-          ElMessage.success({
-            message: '登录成功',
-            type: 'success',
-            showClose: true,
-            duration: 1000
-          })
-          location.reload()
-          // await getAuthRoutes()
-          // await router.push(route.query.redirect as RouteLocationRaw || '/')
-        }).finally(() => {
-          form.loading = false
-        })
-      })
+        const token = await store.dispatch('user/login', 
+        { username: form.name, password: form.password })
+        await getAuthRoutes()
+        await router.push(route.query.redirect as RouteLocationRaw || '/')
+
+
+      } finally {
+        form.loading = false
+      }
     }
     return {
       loginLeftPng,
@@ -252,5 +243,11 @@ export default defineComponent({
     .form {
     }
   }
+}
+
+.subtitle {
+  display: inline-block;     /* 或 block */
+  max-width: 20ch;           /* 超过10个字符换行 */
+  word-break: break-all;     /* 中文英文都能换行 */
 }
 </style>

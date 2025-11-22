@@ -5,7 +5,7 @@ const baseURL: any = import.meta.env.VITE_BASE_URL
 
 const service: AxiosInstance = axios.create({
   baseURL: baseURL,
-  timeout: 5000
+  timeout: 5000,
 })
 
 // 请求前的统一处理
@@ -13,7 +13,7 @@ service.interceptors.request.use(
   (config: AxiosRequestConfig) => {
     // JWT鉴权处理
     if (store.getters['user/token']) {
-      config.headers['token'] = store.state.user.token
+      config.headers['Authorization'] = store.state.user.token
     }
     return config
   },

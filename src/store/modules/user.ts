@@ -31,18 +31,16 @@ const mutations = {
 const actions = {
   // login by login.vue
   login({ commit, dispatch }: ActionContext<userState, userState>, params: any) {
-    return new Promise((resolve, reject) => {
-      loginApi(params)
+  return new Promise((resolve, reject) => {
+    loginApi(params)
       .then(res => {
-        commit('tokenChange', res.data.token)
-        dispatch('getInfo', { token: res.data.token })
-        .then(infoRes => {
-          resolve(res.data.token)
-        })
-      }).catch(err => {
-        reject(err)
+        const token = `${res.data.token_type} ${res.data.access_token}` // 拼接 token_type
+        commit('tokenChange', token) // 保存完整 token
+        dispatch('getInfo', { token }) // 如果需要 token 获取用户信息
+          .then(infoRes => resolve(token))
       })
-    })
+      .catch(err => reject(err))
+  })
   },
   // get user info after user logined
   getInfo({ commit }: ActionContext<userState, userState>, params: any) {

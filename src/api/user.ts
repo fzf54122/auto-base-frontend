@@ -1,23 +1,18 @@
+import service from '@/utils/system/request';
 import request from '@/utils/system/request'
 
+
+
+
 /** 登录api */
-export function loginApi(data: object) {
-  return request({
-    url: '/user/login',
-    method: 'post',
-    baseURL: '/mock',
-    data
-  })
+export function loginApi(data: { username: string; password: string }) {
+  return service.post('/login/', data)
 }
 
 /** 获取用户信息Api */
 export function getInfoApi(data: object) {
-  return request({
-    url: '/user/info',
-    method: 'post',
-    baseURL: '/mock',
-    data
-  })
+
+  return service.get('/user/info', data)
 }
 
 /** 退出登录Api */
